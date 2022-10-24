@@ -1,17 +1,71 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+@use './abstracts' as *;
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+header {
+  position: fixed;
+  width: 100%;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.25);
+  background-color: white;
+  display: flex;
+  align-items: center;
+
+  h1 {
+    margin-inline-start: 0.5em;
+    text-transform: uppercase;
+  }
+
+  nav {
+    margin-inline-start: auto;
+
+    ul {
+      display: flex;
+
+      a {
+        display: block;
+        padding: 1em 2em;
+        transition: all 100ms ease-out;
+        text-transform: capitalize;
+
+        &:hover {
+          background-color: black;
+          color: white;
+        }
+      }
+    }
+  }
 }
 
-body {
-  font-family: 'Poppins', sans-serif;
+main {
+  padding-block-start: 3.5em;
+  min-height: 100vh;
+  
+  .hero {
+    min-height: 40vh;
+    background-color: gray;
+    background-image: url('../public/images/heros/hero-image.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    margin-inline: auto;
+
+    @include mq(large){
+      max-width: 1000px;
+    }
+  }
+
+  .explore__title {
+    font-weight: normal;
+    text-align: center;
+    text-transform: capitalize;
+    padding-block: 1em;
+  }
+
+  .restaurant__item {
+    background-color: red;
+  }
 }
 
-img {
-  display: block;
+footer {
+  text-align: center;
+  border-top: 2px solid black;
+  padding: 1em;
 }
