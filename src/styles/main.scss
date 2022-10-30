@@ -13,23 +13,66 @@ header {
     text-transform: uppercase;
   }
 
+  #hamburger {
+    display: none;
+    color: black;
+    margin-inline-start: auto;
+    margin-inline-end: 2em;
+    width: 1.5rem;
+    height: 1.5rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    @include mq (small){
+      display: block;
+    }
+  }
+
   nav {
     margin-inline-start: auto;
 
     ul {
       display: flex;
 
-      a {
+      @include mq (small){
         display: block;
-        padding: 1em 2em;
-        transition: all 100ms ease-out;
-        text-transform: capitalize;
-
-        &:hover {
-          background-color: black;
-          color: white;
-        }
       }
+    }
+
+    a {
+      display: block;
+      padding: 1em 2em;
+      transition: all 100ms ease-out;
+      text-transform: capitalize;
+
+      &:hover {
+        background-color: black;
+        color: white;
+      }
+
+      @include mq(small){
+        padding: 3em;
+      }
+    }
+
+    &.open{
+      @include mq(small){
+        transform: translateX(0);
+      }
+    }
+
+    @include mq(small){
+      z-index: 9999;
+      position: absolute;
+      background-color: white;
+      inset: 0 auto 0 0;
+      width: 80vw;
+      height: 100vh;
+
+      transform: translateX(-80vw);
+      transition: transform 0.3s ease;
     }
   }
 }
