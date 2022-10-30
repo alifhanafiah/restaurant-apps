@@ -25,7 +25,7 @@ header {
       cursor: pointer;
     }
 
-    @include mq (small){
+    @include max(small){
       display: block;
     }
   }
@@ -36,7 +36,7 @@ header {
     ul {
       display: flex;
 
-      @include mq (small){
+      @include max(small){
         display: block;
       }
     }
@@ -52,18 +52,18 @@ header {
         color: white;
       }
 
-      @include mq(small){
+      @include max(small){
         padding: 3em;
       }
     }
 
     &.open{
-      @include mq(small){
+      @include max(small){
         transform: translateX(0);
       }
     }
 
-    @include mq(small){
+    @include max(small){
       z-index: 9999;
       position: absolute;
       background-color: white;
@@ -90,7 +90,7 @@ main {
     background-position: center top;
     margin-inline: auto;
 
-    @include mq(large){
+    @include min(large){
       max-width: 1000px;
     }
   }
