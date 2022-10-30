@@ -103,9 +103,20 @@ main {
   }
 
   .restaurant__list {
+    display: grid;
+    gap: 2rem;
     max-width: 80%;
     margin-inline: auto;
     margin-block-end: 10rem;
+
+    @include min(medium){
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include min(large){
+      max-width: 1000px;
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 
   .restaurant__item {
