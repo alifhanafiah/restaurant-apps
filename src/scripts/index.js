@@ -21,6 +21,7 @@ for (let restaurant of restaurants) {
       <div class="card__header">
         <div class="card__header__location">${restaurant.city}</div>
         <img
+          class="card__header__image"
           src=${restaurant.pictureId}
           alt=""
         />

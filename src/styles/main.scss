@@ -15,15 +15,32 @@
   }
 }
 
+html {
+  scroll-padding-top: 12vh;
+}
+
+body {
+  background-image: url('../public/images/Simple-Shiny.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
 header {
   position: fixed;
   min-width: 100%;
-  height: 10%;
+  height: 10vh;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,.25);
   background-color: white;
   display: flex;
   align-items: center;
   z-index: 99999;
+
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(13px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 
   h1 {
     margin-inline-start: 0.5em;
@@ -63,6 +80,7 @@ header {
       padding: 1em 2em;
       transition: all 100ms ease-out;
       text-transform: capitalize;
+      font-weight: bold;
 
       &:hover {
         background-color: black;
@@ -83,29 +101,39 @@ header {
 
     @include max(small){
       position: absolute;
-      background-color: white;
       inset: 0 auto 0 0;
-      width: 80vw;
+      width: 75vw;
       height: 100vh;
 
-      transform: translateX(-80vw);
+      background: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(13px);
+      -webkit-backdrop-filter: blur(13px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+
+      transform: translateX(-100vw);
       transition: transform 0.3s ease;
     }
+  }
+
+  @include min(large) {
+    padding-inline: 8%;
   }
 }
 
 main {
-  padding-block-start: 3.5em;
+  padding-block-start: 10vh;
   min-height: 100vh;
   
   .hero {
-    min-height: 40vh;
+    min-height: 60vh;
     background-color: gray;
     background-image: url('../public/images/heros/hero-image.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center top;
     margin-inline: auto;
+    border-radius: 0 0 .7em .7em;
 
     @include min(large){
       max-width: 1000px;
@@ -113,18 +141,26 @@ main {
   }
 
   .explore__title {
-    font-weight: normal;
+    font-weight: bold;
     text-align: center;
     text-transform: capitalize;
     padding-block: 1em;
+    margin-block: 1em;
+
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(13px);
+    -webkit-backdrop-filter: blur(13px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
   }
 
   .restaurant__list {
     display: grid;
+    place-items: center;
     gap: 2rem;
     max-width: 80%;
     margin-inline: auto;
-    margin-block-end: 10rem;
+    padding-block-end: 10rem;
 
     @include min(medium){
       grid-template-columns: repeat(2, 1fr);
@@ -137,7 +173,12 @@ main {
   }
 
   .restaurant__item {
-    border: 1px solid black;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(13px);
+    -webkit-backdrop-filter: blur(13px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
   }
 
   .card__header {
@@ -145,10 +186,19 @@ main {
 
     &__location {
       position: absolute;
-      border: 1px solid black;
-      background-color: white;
+      background-color: #E3D0E3;
       padding: .5em 2em;
-      inset: 1rem auto auto auto;
+      inset: 1rem auto auto 1rem;
+      font-weight: bold;
+      border-radius: 5rem;
+
+      box-shadow: 12px 11px 49px 2px rgba(0,0,0,0.64);
+      -webkit-box-shadow: 12px 11px 49px 2px rgba(0,0,0,0.64);
+      -moz-box-shadow: 12px 11px 49px 2px rgba(0,0,0,0.64);
+    }
+
+    &__image {
+      border-radius: 1rem 1rem 0 0;
     }
   }
 
@@ -176,4 +226,10 @@ footer {
   text-align: center;
   border-top: 2px solid black;
   padding: 1em;
+
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(13px);
+  -webkit-backdrop-filter: blur(13px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
