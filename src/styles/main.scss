@@ -46,6 +46,10 @@ header {
   h1 {
     margin-inline-start: 0.5em;
     text-transform: uppercase;
+
+    @include max(small){
+      font-size: 1.5rem;
+    }
   }
 
   #hamburger {
@@ -108,11 +112,7 @@ header {
       width: 75vw;
       height: 100vh;
 
-      background: rgba(255, 255, 255, 0.2);
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-      backdrop-filter: blur(13px);
-      -webkit-backdrop-filter: blur(13px);
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      background-color: white;
 
       transform: translateX(-100vw);
       transition: transform 0.3s ease;
